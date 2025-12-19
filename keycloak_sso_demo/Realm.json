@@ -1,0 +1,49 @@
+{
+  "realm": "demo-realm",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "app-a",
+      "name": "App A",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:3001/callback"],
+      "standardFlowEnabled": true,
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "secret": "APP_A_SECRET_CHANGE_ME"
+    },
+    {
+      "clientId": "app-b",
+      "name": "App B",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:3002/callback"],
+      "standardFlowEnabled": true,
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "secret": "APP_B_SECRET_CHANGE_ME"
+    }
+  ],
+  "users": [
+    {
+      "username": "demo-user",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Demo",
+      "lastName": "User",
+      "email": "demo@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "demo-pass",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
